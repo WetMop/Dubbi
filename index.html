@@ -9,12 +9,13 @@
       crossorigin="anonymous"
       
     />
-    <audio autoplay loop src="song.mp3" id="myAudio"></audio>
+    
   </head>
 
   <canvas id="snowCanvas"></canvas>
 
   <body>
+    
     <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 100%; width: 100%; right: 0vh; font-size: 2vh;">
         <h1 class="Click fade-in mb-5">Click Here</h1>
         <div class="d-flex flex-column align-items-center">
@@ -231,11 +232,17 @@
         <div class="snow"></div>
     </div>
 
-    
+    <audio id="myAudio">
+        <source src="/song.mp3" type="audio/mpeg">
+    </audio>
+
+      
+
     
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
     <script>
+    
       const clickHeader = document.querySelector(".Click");
       const fadeHeader = document.querySelector(".Title");
       const fadeA = document.querySelector(".FadeButton");
@@ -251,12 +258,14 @@
         snows.forEach(snow => {
             snow.classList.add("newsnow");
         });
+        var audio = document.getElementById("myAudio");
+        audio.play();
         
         
       });
 
       const myAudio = document.getElementById("myAudio");
-      myAudio.volume = 0.4;
+      myAudio.volume = .5;
 
      
 
